@@ -1,0 +1,12 @@
+package cn.tamny.models;
+
+import java.sql.Date;
+
+public class Member {
+
+	private int id;
+	private String memberName;
+	private Date date;
+
+	
+}

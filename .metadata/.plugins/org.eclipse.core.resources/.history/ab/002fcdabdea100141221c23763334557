@@ -1,0 +1,29 @@
+package cn.blogs.dao;
+
+
+import cn.blogs.models.User;
+public class BlogDao extends BaseDao {
+
+	public BlogDao() {
+
+	}
+
+	public void add(Object entity) {
+		HibernateUtil.add(entity);
+	}
+
+	public void delete(Object entity) {
+
+		HibernateUtil.delete(entity);
+	}
+
+	public void update(Object entity) {
+
+		HibernateUtil.update(entity);
+	}
+
+	public User getBlogByid(int id) {
+		return (User) HibernateUtil.getObjectByid(User.class, id);
+	}
+
+}

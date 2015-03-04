@@ -1,0 +1,63 @@
+package cn.blogs.action;
+
+
+
+import java.util.Date;
+
+import cn.blogs.dao.UserDao;
+import cn.blogs.models.User;
+public class LoginAction extends BaseAction {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private User user;
+
+	@Override
+	public String execute() {
+		// user=getModel();
+		System.out.println();
+		return SUCCESS;
+	}
+
+	public String login() {
+		if(user.getUsername().equals("admin") && user.getUserpwd().equals("admin")){
+			System.out.println("ssssssssssss");
+			this.session().setAttribute("usermodel", user);
+		}
+		return SUCCESS;
+	}
+
+	public String reg(){
+		UserDao userdao=new UserDao();
+		user.setRegdate(new Date());
+		String message=userdao.regUser(user);
+		
+		//System.out.println(user.getUsername());
+		//System.out.println(user.getUserpwd());
+		System.out.println("添加成功！");
+		return SUCCESS;
+	}
+
+	/*@Override
+	public void validate() {
+
+		if (user.getUserName() == null || user.getUserName().trim().length() < 1) {
+			addFieldError("no.username", "must input username");
+		}
+		if (user.getUserPwd() == null || user.getUserPwd().trim().length() < 1) {
+			addFieldError("no.password", "must intpu password");
+		}
+
+	}*/
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+}

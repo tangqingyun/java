@@ -1,0 +1,24 @@
+package cn.blogs.commons;
+
+2.import java.util.Collections;  
+3.import java.util.List;  
+4.public class Page<E> {/** 表示分页中的一页。*/  
+5.    private boolean hasPre; //是否有上一页  
+6.    private boolean hasNext; //是否有下一页  
+7.    private List<E> items; //当前页包含的记录列表  
+8.    private int index; //当前页页码(起始为1)  
+9.    //省略setter  
+10.    public int getIndex() {  
+11.        return this.index;  
+12.    }  
+13.    public boolean isHasPre() {  
+14.        return this.hasPre;  
+15.    }  
+16.    public boolean isHasNext() {  
+17.        return this.hasNext;  
+18.    }  
+19.    public List<E> getItems() {  
+20.        return this.items == null ? Collections.<E>emptyList() : this.items;  
+21.    }  
+22.}  
+

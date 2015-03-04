@@ -1,0 +1,5 @@
+package cn.blogs.models;
+
+public class User {
+
+}

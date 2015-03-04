@@ -1,0 +1,5 @@
+package cn.tamny.models;
+
+public class Member {
+
+}

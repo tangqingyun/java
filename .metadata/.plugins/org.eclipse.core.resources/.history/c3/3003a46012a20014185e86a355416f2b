@@ -1,0 +1,5 @@
+package cn.slnspring.dao;
+
+public class DaoFactory {
+
+}

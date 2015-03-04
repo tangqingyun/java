@@ -1,0 +1,10 @@
+package cn.blogs.models;
+
+public class Blogs {
+ 
+	private int blogId;
+	private int userId;
+	private String title;
+	private String content
+	
+}

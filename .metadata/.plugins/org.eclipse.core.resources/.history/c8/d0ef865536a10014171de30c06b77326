@@ -1,0 +1,117 @@
+package cn.blogs.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public final class HibernateUtil {
+	private static SessionFactory sessionFactory;
+
+	private HibernateUtil() {
+	}
+
+	static {
+		Configuration cfg = new Configuration();
+		cfg.configure();
+		sessionFactory = cfg.buildSessionFactory();
+	}
+
+	public static SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public static Session getSession() {
+		return sessionFactory.openSession();
+	}
+
+	public static void add(Object entity) {
+		Session s = null;
+		Transaction tx = null;
+		try {
+			s = HibernateUtil.getSession();
+			tx = s.beginTransaction();
+			s.save(entity);
+			tx.commit();
+		} finally {
+			if (s != null)
+				s.close();
+		}
+	}
+
+	public static void update(Object entity) {
+		Session s = null;
+		Transaction tx = null;
+		try {
+			s = HibernateUtil.getSession();
+			tx = s.beginTransaction();
+			s.update(entity);
+			tx.commit();
+		} finally {
+			if (s != null)
+				s.close();
+		}
+	}
+
+	public static void delete(Object entity) {
+		Session s = null;
+		Transaction tx = null;
+		try {
+			s = HibernateUtil.getSession();
+			tx = s.beginTransaction();
+			s.delete(entity);
+			tx.commit();
+		} finally {
+			if (s != null)
+				s.close();
+		}
+	}
+
+	/**
+	 * 根据主键的id号 查询一条数据
+	 * 
+	 * @param c
+	 * @param id
+	 * @return
+	 */
+	public static Object getObjectByid(Class<?> c, int id) {
+		Object model = null;
+		Session s = null;
+		try {
+			s = getSession();
+			model = s.get(c, id);
+
+		} finally {
+			if (s != null)
+				s.close();
+		}
+		return model;
+	}
+
+	public static List<T> query(String sql, String[] param) {
+		List<T> list = new ArrayList<T>();
+		Session session = null;
+		try {
+			session = getSession();
+			Query query = session.createQuery(sql);
+			if (param != null) {
+				for (int i = 0; i < param.length; i++) {
+					query.setString(i, param[i]);
+				}
+			}
+			list = query.list();
+		} catch (Exception e) {
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		return list;
+
+	}
+
+}

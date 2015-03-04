@@ -1,0 +1,46 @@
+package cn.blogs.action;
+
+import java.util.Date;
+
+import cn.blogs.dao.BlogDao;
+import cn.blogs.models.Blog;
+
+public class BlogAction extends BaseAction {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Blog blog;
+	private BlogDao blogdao;
+
+	public BlogAction() {
+		blogdao = new BlogDao();
+	}
+
+	@Override
+	public String execute() {
+		
+		return null;
+	}
+
+	public String pubBlog(){
+		blog.setPubDate(new Date());
+		blog.setUserId(1);
+		blog.setViewCount(0);
+		blogdao.add(blog);
+		System.out.println("发布成功");
+		return null;
+	}
+    
+
+
+	public Blog getBlog() {
+		return this.blog;
+	}
+
+	public void setBlog(Blog blog) {
+		this.blog = blog;
+	}
+
+}

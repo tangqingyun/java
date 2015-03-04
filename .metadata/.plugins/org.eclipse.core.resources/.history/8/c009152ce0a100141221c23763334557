@@ -1,0 +1,37 @@
+package cn.blogs.dao;
+
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+import cn.blogs.models.User;
+public class BlogDao extends BaseDao {
+
+	public BlogDao() {
+
+	}
+
+
+	public User getBlogByid(int id) {
+		return (User) HibernateUtil.getObjectByid(User.class, id);
+	}
+
+	public User getBlogByUserIdAndBlogId(int blogId,int userId){
+		
+		Session s = null;
+		try {
+			s = HibernateUtil.getSession();
+			String hql = "from Blog where username=:uname and userpwd=:upwd";
+			Query q = s.createQuery(hql);
+			q.setString("uname", uname);
+			q.setString("upwd", upwd);
+			User user = (User) q.uniqueResult();
+			return user;
+		} finally {
+			if (s != null)
+				s.close();
+		}
+		
+	}
+	
+}

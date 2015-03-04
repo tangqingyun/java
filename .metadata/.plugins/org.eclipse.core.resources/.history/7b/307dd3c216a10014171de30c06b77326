@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://192.168.7.87:3306/test</property>
+		<property name="connection.username">admin</property>
+		<property name="connection.password">123456</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.password"></property>
+		<property name="hbm2ddl.auto">create</property>
+		<property name="show_sql">true</property>
+		<mapping resource="cn/tamny/models/member.hbm.xml"/>
+		
+	</session-factory>
+</hibernate-configuration>

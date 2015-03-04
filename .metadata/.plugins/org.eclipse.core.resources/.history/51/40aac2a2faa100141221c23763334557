@@ -1,0 +1,6 @@
+package cn.tamny.models;
+
+public class Student {
+
+	public int 
+}

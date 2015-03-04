@@ -1,0 +1,15 @@
+package cn.tamny.hibernate;
+
+import org.hibernate.Session;
+
+public class Test01 {
+
+	public static void main(String[] args) {
+		
+	
+		HibernateUtil
+	
+
+	}
+
+}

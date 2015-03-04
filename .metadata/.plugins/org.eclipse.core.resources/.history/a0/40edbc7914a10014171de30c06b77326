@@ -1,0 +1,22 @@
+package cn.tamny.hibernate;
+
+import java.sql.Date;
+
+
+
+import cn.tamny.models.Member;
+
+public class Test01 {
+
+	public static void main(String[] args) {
+		
+	    Member member=new Member();
+	    member.setId(1);
+	    member.setMemberName(memberName);("nnnn");
+	    member.setDate(new Date(0));
+		HibernateUtil.add(member);
+	
+  
+	}
+
+}

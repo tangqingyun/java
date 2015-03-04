@@ -1,0 +1,9 @@
+package cn.blogs.models;
+
+public class User {
+   
+	private String username;
+	private String userpwd;
+	
+	
+}

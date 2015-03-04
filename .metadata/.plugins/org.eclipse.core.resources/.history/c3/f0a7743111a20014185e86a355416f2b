@@ -1,0 +1,21 @@
+package cn.slnspring.idao;
+
+import cn.slnspring.dao.IHelloworld;
+
+public class Helloworld implements IHelloworld {
+	private String say;
+	public String getSay() {
+		return say;
+	}
+
+	public void setSay(String say) {
+		this.say = say;
+	}
+
+	@Override
+	public void sayHello() {
+		System.out.println(this.say);
+	}
+	
+	
+}

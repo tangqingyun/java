@@ -1,0 +1,59 @@
+package cn.blogs.dao;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+import cn.blogs.models.User;
+
+public class UserDao extends BaseDao {
+
+	public UserDao() {
+
+	}
+
+	public void add(Object entity) {
+
+		HibernateUtil.add(entity);
+	}
+
+	public void delete(Object entity) {
+
+		HibernateUtil.delete(entity);
+	}
+
+	public void update(Object entity) {
+
+		HibernateUtil.update(entity);
+	}
+
+	public User getUserBy(String nickname) {
+
+		Session s = null;
+		try {
+			s = HibernateUtil.getSession();
+			String hql = "from users as user where user.username=:username";
+			Query q = s.createQuery(hql);
+			q.setString("username", nickname);
+			User user = (User) q.uniqueResult();
+			return user;
+		} finally {
+			if (s != null)
+				s.close();
+		}
+	}
+
+	public String regUser(User user) {
+		Object object = HibernateUtil.getSingle(
+				"from users where username=:username",
+				new String[] { user.getUsername() });
+		if (object != null)
+			return "用户名已注册";
+		this.add(user);
+		return "注册成功";
+	}
+
+	public User getUserByid(int id) {
+		return (User) HibernateUtil.getObjectByid(User.class, id);
+	}
+
+}

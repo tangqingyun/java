@@ -1,0 +1,12 @@
+package cn.slnspring.aop;
+
+public class HelloworldAspect {
+	 public void beforeAdvice() {  
+		 5.        System.out.println("===========before advice");  
+		 6.}  
+		 7.//后置最终通知  
+		 8.    public void afterFinallyAdvice() {  
+		 9.        System.out.println("===========after finally advice");  
+		 10.    }  
+
+}

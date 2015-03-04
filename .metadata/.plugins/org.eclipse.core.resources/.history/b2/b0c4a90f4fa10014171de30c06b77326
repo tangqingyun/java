@@ -1,0 +1,8 @@
+package cn.blogs.models;
+
+public class Blogs {
+ 
+	private int blogId;
+	private int userId;
+	
+}

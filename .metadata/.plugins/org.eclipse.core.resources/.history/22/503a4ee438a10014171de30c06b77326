@@ -1,0 +1,11 @@
+package cn.blogs.dao;
+
+import cn.blogs.models.User;
+
+public class BaseDao<T> {
+
+	public <T> T getObjectId(Class<T> t,int id){
+		
+		return (User) HibernateUtil.getObjectByid(, id);
+	}
+}

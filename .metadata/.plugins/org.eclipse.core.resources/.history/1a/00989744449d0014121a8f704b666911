@@ -1,0 +1,7 @@
+package com.data;
+
+public interface IDatabase {
+
+	public boolean executeSQL(String sql, Object... args);
+	
+}

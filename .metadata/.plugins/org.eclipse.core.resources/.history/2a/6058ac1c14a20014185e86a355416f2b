@@ -1,0 +1,29 @@
+package cn.slnspring.junit;
+
+import javax.net.ssl.SSLContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import cn.slnspring.dao.IHelloworld;
+import cn.slnspring.idao.Helloworld;
+
+public class HelloworldTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 1、读取配置文件实例化一个IoC容器
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		// 2、从容器中获取Bean，注意此处完全“面向接口编程，而不是面向实现”
+		IHelloworld helloApi = context.getBean("helloworld", Helloworld.class);
+		// 3、执行业务逻辑
+		helloApi.sayContent();
+	}
+	
+	public static <T> T bbb(String id){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		// 2、从容器中获取Bean，注意此处完全“面向接口编程，而不是面向实现”
+		IHelloworld helloApi = context.getBean("helloworld", Helloworld.class);
+	}
+	
+}

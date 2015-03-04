@@ -1,0 +1,5 @@
+package cn.slnspring.aop;
+
+public class HelloworldAspect {
+
+}

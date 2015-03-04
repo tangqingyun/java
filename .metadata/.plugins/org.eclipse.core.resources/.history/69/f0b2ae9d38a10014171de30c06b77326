@@ -1,0 +1,6 @@
+package cn.blogs.dao;
+
+public class BaseDao<T> {
+
+	public  T 
+}

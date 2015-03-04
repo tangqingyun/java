@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="helloworld" class="cn.slnspring.idao.Helloworld">
+		<!--  <property name="say"  value="Hello"></property>-->
+		
+		<!-- 指定构造器参数 index表示位置，value表示常量值-->   
+		<constructor-arg index="0" value="Hello Spring!"/> 
+		<constructor-arg index="1" value="zhangsan"/> 
+		<property name="values">
+			<list value-type="java.lang.String" merge="default">
+				<value>1</value>
+				<value>2</value>
+				<value>2</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+</beans>

@@ -1,0 +1,10 @@
+package cn.slnspring.idao;
+
+import cn.slnspring.dao.IHelloworld;
+
+public class Helloworld implements IHelloworld {
+	private String say;
+	public void sayHello() {
+		System.out.println("sayHello");
+	}
+}

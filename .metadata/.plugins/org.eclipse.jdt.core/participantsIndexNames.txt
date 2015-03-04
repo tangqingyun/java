@@ -1,0 +1,13 @@
+INDEX VERSION 1.126
+E:\JavaWebAPP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2270095943.index
+\tamny_blog\src
+E:\JavaWebAPP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1254180500.index
+\tamny_blog\src
+E:\JavaWebAPP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\952109912.index
+\Struts2Test\src
+E:\JavaWebAPP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2404000010.index
+\sln_struts2\src
+E:\JavaWebAPP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\100672928.index
+\webtest\src
+E:\JavaWebAPP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3576902359.index
+\TamnyBlogs\src

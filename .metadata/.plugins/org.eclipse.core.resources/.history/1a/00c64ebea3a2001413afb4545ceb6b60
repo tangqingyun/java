@@ -1,0 +1,43 @@
+package cn.slnspring.idao;
+
+import java.util.List;
+
+import cn.slnspring.dao.IHelloworld;
+
+public class Helloworld implements IHelloworld {
+	private String say;
+	private String name;
+    private List<String> list;
+	public Helloworld(String say, String name) {
+		this.say = say;
+		this.name = name;
+	}
+
+	public String getSay() {
+		return say;
+	}
+
+	public void setSay(String say) {
+		this.say = say;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public void sayHello() {
+		System.out.println(this.say);
+	}
+
+	
+	@Override
+	public void sayContent() {
+		System.out.println(this.say + "/" + this.name);
+	}
+
+}

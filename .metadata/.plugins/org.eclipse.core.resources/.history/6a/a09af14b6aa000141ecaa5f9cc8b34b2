@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="struts2" namespace="/blogs" extends="struts-default">
+        <action name="HelloWorldAction" class="cn.blogs.action.HelloWorldAction">
+        	<!--  <result name="success">/index.jsp</result>-->
+        </action>
+        <action name="LoginAction" class="cn.blogs.action.LoginAction" />
+        <action name="login" class="cn.blogs.action.LoginAction" method="login">
+        	 <result name="success">/index.jsp</result>
+        </action>
+       <action name="reg" class="cn.blogs.action.LoginAction" method="login">
+        	 <result name="success">/index.jsp</result>
+        </action>
+    </package>
+    
+</struts>

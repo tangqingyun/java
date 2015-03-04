@@ -1,0 +1,17 @@
+package cn.tamny.hibernate;
+
+import org.hibernate.Session;
+
+import cn.tamny.models.Member;
+
+public class Test01 {
+
+	public static void main(String[] args) {
+		
+	    Member 
+		HibernateUtil.add(entity);
+	
+
+	}
+
+}

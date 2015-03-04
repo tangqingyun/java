@@ -1,0 +1,7 @@
+<classpath>
+  <container id="sln_struts2!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="E:/JavaWebAPP/sln_struts2/WebContent/WEB-INF/lib/hibernate3.jar">
+      <source-attachment-path>F:/qingyun.tang/down_src/hibernate-3.2/src</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

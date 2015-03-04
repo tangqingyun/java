@@ -1,0 +1,11 @@
+<!--将struts的核心控制器配置成标准Servlet-->
+<servlet>
+	<servlet-name>actionServlet</servlet-name>
+	<servlet-class>org.apache.struts.action.ActionSerlet</servlet-class>
+
+<!--采用模式匹配来配置核心控制器的URL-->
+	<servlet-mapping>
+		<servlet-name>actionServlet</servlet-name>
+		<url-pattern>*.do<u/rl-pattern>
+	</servlet-mapping>
+</servlet>	

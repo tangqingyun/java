@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="helloworld" class="cn.slnspring.idao.Helloworld">
+		<!-- <property name="say" value="Hello"></property> -->
+
+		<!-- 指定构造器参数 index表示位置，value表示常量值 -->
+		<constructor-arg index="0" value="Hello Spring!" />
+		<constructor-arg index="1" value="zhangsan" />
+
+		<!-- 注入List类型 -->
+		<property name="values">
+			<list value-type="java.lang.String" merge="default">
+				<value>1</value>
+				<value>2</value>
+				<value>2</value>
+			</list>
+		</property>
+		<!-- 注入Set类型 -->
+		<property name="colle">
+			<set>
+				<value>colle1</value>
+				<value>colle2</value>
+				<value>colle3</value>
+				<value>colle4</value>
+			</set>
+		</property>
+
+
+	</bean>
+
+
+	<bean id="aspect" class="cn.javass.spring.chapter6.aop.HelloWorldAspect" />
+	<aop:config>
+		<aop:pointcut id="pointcut" expression="execution(* cn.javass..*.*(..))" />
+		<aop:aspect ref="aspect">
+			<aop:before pointcut-ref="pointcut" method="beforeAdvice" />
+			<aop:after pointcut="execution(* cn.javass..*.*(..))"
+				method="afterFinallyAdvice" />
+		</aop:aspect>
+	</aop:config>
+
+
+
+</beans>

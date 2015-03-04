@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 2 
+ 3  <beans xmlns="http://www.springframework.org/schema/beans"
+ 4 
+ 5     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 6 
+ 7     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+ 8 
+ 9  
+10 
+11  
+12 
+13     <bean id="greetingServiceImpl" class="cn.csdn.service.GreetingServiceImpl">
+14 
+15        <property name="say" value="Hello"></property>
+16 
+17     </bean>
+18 
+19  </beans>

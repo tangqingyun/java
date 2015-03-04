@@ -1,0 +1,13 @@
+package cn.blogs.models;
+
+import java.sql.Date;
+
+public class Blogs {
+ 
+	private int blogId;
+	private int userId;
+	private String title;
+	private String content;
+	private Date 
+	
+}
